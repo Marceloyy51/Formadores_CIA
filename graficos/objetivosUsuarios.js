@@ -1,8 +1,8 @@
 async function objetivosUsuarios() {
-    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/razoes-globais.json'
+    const url = 'https://raw.githubusercontent.com/silviosnjr/CienciaDeDados-CriandoGraficosDinamicosComJavaScript/refs/heads/Aula01/esportes/esportes-mais-praticados.json '
     const res = await fetch(url)
     const dados = await res.json()
-    const objetivosUsuarios = Object.keys(dados)
+    const objetivosUso = Object.keys(dados)
     const quantidadeUsuarios = Object.values(dados)
   
   const data = [

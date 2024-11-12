@@ -39,6 +39,12 @@ nav a:hover {
     transform: scale(0.90);
     transition: transform 0.1s;
 }
+.graficos-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .graficos-container__texto {
     font-size: 1.3rem;
     text-align: center;
@@ -47,6 +53,10 @@ nav a:hover {
 }
 #graficos-container {
     margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 footer {
     display: flex;
