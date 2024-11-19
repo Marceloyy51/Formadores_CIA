@@ -1,3 +1,4 @@
+import { getCSS } from "./common.js"
 async function objetivosUsuarios() {
     const url = 'https://raw.githubusercontent.com/silviosnjr/CienciaDeDados-CriandoGraficosDinamicosComJavaScript/refs/heads/Aula01/esportes/esportes-mais-praticados.json '
     const res = await fetch(url)
@@ -17,6 +18,8 @@ async function objetivosUsuarios() {
     {
       height: 600,
       width: 870,
+      plot_bgcolor: getCSS('--bg-color'),
+      paper_bgcolor: getCSS('--bg-color'),
     }
   
   const grafico = document.createElement('div')

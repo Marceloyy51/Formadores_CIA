@@ -1,3 +1,5 @@
+import { getCSS, tickConfig } from "./common.js"
+
 async function quantidadeUsuarios() {
   const url = 'https://raw.githubusercontent.com/silviosnjr/CienciaDeDados-CriandoGraficosDinamicosComJavaScript/refs/heads/Aula01/esportes/esportes-mais-praticados.json';
   const res = await fetch(url);
@@ -16,10 +18,42 @@ async function quantidadeUsuarios() {
     }
   ];
 
+  const layout = {
+    plot_bgcolor: getCSS('--bg-color'),
+    paper_bgcolor: getCSS('--bg-color'),
+
+    title: {
+      text: "Esportes em Números",
+        font: {
+          color: getCSS('--primary-color'),
+          family: getCSS('--font'),
+          size: 30,
+        }
+    },
+    xaxis: {
+      tickfont: tickConfig,
+      title: {
+        text: "Nome dos esportes",
+        font: {
+          color: getCSS('--secundary-color')
+        }
+      }
+    },
+    yaxis: {
+      tickfont: tickConfig,
+      title: {
+        text: "QTD em milhões",
+        font: {
+          color: getCSS('--secundary-color')
+        }
+      }
+    }    
+  }
+
   const grafico = document.createElement('div');
   grafico.className = 'grafico';
   document.getElementById('graficos-container').appendChild(grafico);
-  Plotly.newPlot(grafico, data);
+  Plotly.newPlot(grafico, data, layout);
 }
 
 quantidadeUsuarios();
